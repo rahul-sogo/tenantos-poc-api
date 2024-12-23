@@ -102,6 +102,26 @@ async function getIpAssignments(req, res) {
     }
 }
 
+async function getAssignableSubnets(req, res) {
+    const { server_id } = req.params;
+    try {
+        const response = await axios.get(`${config.BASE_URL}/api/servers/${server_id}/ipassignments/getAssignableSubnets`, {
+            headers: {
+                'Authorization': `Bearer ${config.AUTH_KEY}`,
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error fetching IP assignments:', error);
+        res.status(error.response?.status || 500).json({
+            message: 'Error fetching IP assignments',
+            error: error.message
+        });
+    }
+}
+
 async function getInventory(req, res) {
     const { server_id } = req.params;
     try {
@@ -250,5 +270,6 @@ module.exports = {
     getTags,
     getConnections,
     getHwSummary,
-    createServer
+    createServer,
+    getAssignableSubnets
 };

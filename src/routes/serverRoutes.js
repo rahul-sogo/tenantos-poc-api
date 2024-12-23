@@ -14,5 +14,6 @@ router.get('/servers/tags', serverController.getTags);
 router.get('/servers/:server_id/connections', serverController.getConnections);
 router.get('/servers/:server_id/hwsummary', serverController.getHwSummary);
 router.post('/servers', serverController.createServer);
+router.get('/servers/:server_id/ipassignments/getAssignableSubnets',serverController.getAssignableSubnets)
 
 module.exports = router;
