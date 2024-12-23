@@ -6,10 +6,10 @@ const userRoutes = require('./routes/userRoutes');
 const osRoutes = require('./routes/osRoutes');
 const consoleRoutes = require('./routes/consoleRoutes');
 const pxeRoutes = require('./routes/pxeRoutes');
-const remoteAgentRoutes = require('./routes/remoteAgentRoutes');
-const networkDeviceRoutes = require('./routes/networkDeviceRoutes');
+const remoteAgentRoutes = require('./routes/remoteRoutes');
+const networkDeviceRoutes = require('./routes/networkRoutes');
 const inventoryRoutes = require('./routes/inventoryRoutes');
-const roleRoutes = require('./routes/roleRoutes');
+const roleRoutes = require('./routes/rolesRoutes');
 
 const app = express();
 const port = process.env.PORT;

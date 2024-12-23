@@ -77,9 +77,6 @@ async function getVersion(req, res) {
   }
 }
 
-const axios = require('axios');
-const config = require('../config/config');
-
 async function getActivityLog(req, res) {
     const { server_id } = req.params;
     try {

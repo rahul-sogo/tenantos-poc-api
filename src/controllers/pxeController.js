@@ -19,9 +19,6 @@ async function getProfiles(req, res) {
     }
 }
 
-const axios = require('axios');
-const config = require('../config/config');
-
 async function getDiskLayouts(req, res) {
     try {
         const response = await axios.get(`${config.BASE_URL}/api/pxe/disklayouts`, {
